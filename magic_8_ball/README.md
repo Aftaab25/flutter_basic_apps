@@ -1,3 +1,3 @@
-# Basic Flutter apps to practice Flutter.
+# Flutter Magic 8 Ball App
 
-Flutter basic apps to learn Flutter App Development.
+Flutter Magic 8 Ball App
