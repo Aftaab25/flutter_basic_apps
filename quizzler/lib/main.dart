@@ -25,20 +25,34 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  List<Icon> resultRow = [];
+
+  List<String> questions = [
+    "The earth is 4th planet from the sun",
+    "The planet Venus has no moons",
+    "Jupiter is mostly composed of irons",
+    "Sun is a star of average size",
+    "A lunar eclipse occurs when the sun passes"
+  ];
+
+  List<bool> answers = [false, true, false, true, false];
+
+  int questionNum = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Expanded(
+        Expanded(
           flex: 5,
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go',
-                style: TextStyle(
+                questions[questionNum],
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 25,
                 ),
@@ -51,7 +65,31 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  print(questionNum);
+                  if (questionNum < 4) {
+                    questionNum++;
+                  }
+                  if (questionNum < 5) {
+                    if (answers[questionNum] == true) {
+                      resultRow.add(
+                        const Icon(
+                          Icons.check,
+                          color: Colors.green,
+                        ),
+                      );
+                    } else {
+                      resultRow.add(
+                        const Icon(
+                          Icons.close,
+                          color: Colors.red,
+                        ),
+                      );
+                    }
+                  }
+                });
+              },
               style: const ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(
                   Colors.green,
@@ -71,7 +109,31 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  print(questionNum);
+                  if (questionNum < 4) {
+                    questionNum++;
+                  }
+                  if (questionNum < 5) {
+                    if (answers[questionNum] == false) {
+                      resultRow.add(
+                        const Icon(
+                          Icons.check,
+                          color: Colors.green,
+                        ),
+                      );
+                    } else {
+                      resultRow.add(
+                        const Icon(
+                          Icons.close,
+                          color: Colors.red,
+                        ),
+                      );
+                    }
+                  }
+                });
+              },
               style: const ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(
                   Colors.red,
@@ -86,6 +148,9 @@ class _QuizPageState extends State<QuizPage> {
               ),
             ),
           ),
+        ),
+        Row(
+          children: resultRow,
         ),
       ],
     );
