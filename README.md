@@ -1,3 +1,3 @@
 # Basic Flutter apps to practice Flutter.
 
-Flutter apps to learn Flutter App Development.
+Flutter basic apps to learn Flutter App Development.
