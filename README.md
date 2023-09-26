@@ -1,3 +1,3 @@
-# magic_8_ball
+# Basic Flutter apps to practice Flutter.
 
-A new Flutter project.
+Flutter apps to learn Flutter App Development.
