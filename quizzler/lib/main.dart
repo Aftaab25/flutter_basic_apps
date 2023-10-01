@@ -67,7 +67,6 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  print(questionNum);
                   if (questionNum < 4) {
                     questionNum++;
                   }
@@ -111,7 +110,6 @@ class _QuizPageState extends State<QuizPage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  print(questionNum);
                   if (questionNum < 4) {
                     questionNum++;
                   }
